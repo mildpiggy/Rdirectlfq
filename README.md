@@ -1,0 +1,50 @@
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+# Rdirectlfq
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+`Rdirectlfq` is an R package that runs the `directlfq` Python library to
+calculate protein abundance using ion abundance.
+
+## Installation
+
+You can install the development version of Rdirectlfq like so:
+
+``` r
+devtools::install_github("mildpiggy/directlfq")
+```
+
+## Requirement
+
+The packages require a python conda environment with dircetlfq library.
+Your can check and deploy this conda environment by
+`check_directlfq_Module`
+
+``` r
+check_directlfq_Module(confirm_or_not = T)
+```
+
+## Example
+
+This is a basic example which shows you how to solve a common problem:
+
+``` r
+library(Rdirectlfq)
+data(example_diann_res) ## A diann result from report.tsv
+pro_int = directlfq(example_diann_res,reformatted = F)
+
+## A generic input table, which has been reformatted.
+data(example_generic_input)
+pro_int = directlfq(example_generic_input, reformatted = T)
+```
+
+For more detailed information on the input table, please refer to the
+GitHub repository of MannLabs: <https://github.com/MannLabs/directlfq>.
+
+## Q&A
+
+Any issues encountered during the use can be submitted through the issue
+tracker or by contacting the developer.
